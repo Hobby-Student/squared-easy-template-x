@@ -1,5 +1,5 @@
 {
-  "name": "easy-template-x",
+  "name": "squared-easy-template-x",
   "version": "4.1.1",
   "description": "Generate docx documents from templates, in Node or in the browser.",
   "keywords": [
@@ -10,22 +10,22 @@
     "microsoft",
     "ms"
   ],
-  "author": "Alon Bar",
+  "author": "squared GmbH",
   "license": "MIT",
-  "homepage": "https://github.com/alonrbar/easy-template-x",
+  "homepage": "https://github.com/Hobby-Student/squared-easy-template-x",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alonrbar/easy-template-x.git"
+    "url": "https://github.com/Hobby-Student/squared-easy-template-x.git"
   },
   "bugs": {
-    "url": "https://github.com/alonrbar/easy-template-x/issues"
+    "url": "https://github.com/Hobby-Student/squared-easy-template-x/issues"
   },
   "type": "module",
-  "main": "dist/cjs/easy-template-x.cjs",
-  "module": "dist/es/easy-template-x.mjs",
+  "main": "dist/cjs/squared-easy-template-x.cjs",
+  "module": "dist/es/squared-easy-template-x.mjs",
   "exports": {
-    "require": "./dist/cjs/easy-template-x.cjs",
-    "import": "./dist/es/easy-template-x.mjs"
+    "require": "./dist/cjs/squared-easy-template-x.cjs",
+    "import": "./dist/es/squared-easy-template-x.mjs"
   },
   "typings": "dist/types/index.d.ts",
   "files": [

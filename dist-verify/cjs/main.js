@@ -1,4 +1,4 @@
-const easy = require('easy-template-x');
+const easy = require('squared-easy-template-x');
 const fs = require('fs');
 
 async function main() {

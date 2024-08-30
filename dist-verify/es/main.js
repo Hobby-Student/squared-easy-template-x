@@ -1,4 +1,4 @@
-import { TemplateHandler } from 'easy-template-x';
+import { TemplateHandler } from 'squared-easy-template-x';
 import * as fs from 'fs';
 
 async function main() {

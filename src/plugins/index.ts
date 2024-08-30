@@ -1,4 +1,5 @@
 export * from './image';
+export * from './imageBase64';
 export * from './link';
 export * from './loop';
 export * from './rawXml';

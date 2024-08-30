@@ -4,6 +4,6 @@
   "main": "main.js",
   "type": "module",
   "dependencies": {
-    "easy-template-x": "file:../.."
+    "squared-easy-template-x": "file:../.."
   }
 }

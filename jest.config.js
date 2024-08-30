@@ -14,7 +14,7 @@ export default {
         ["jest-html-reporters", {
             publicPath: "./test-reports",
             filename: "report.html",
-            urlForTestFiles: "https://github.com/alonrbar/easy-template-x/blob/develop",
+            urlForTestFiles: "https://github.com/alonrbar/squared-easy-template-x/blob/develop",
             inlineSource: true,
         }]
     ]

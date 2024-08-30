@@ -1,10 +1,10 @@
-# easy-template-x
+# squared-easy-template-x
 
 Generate docx documents from templates, in Node or in the browser.
 
-[![ci](https://github.com/alonrbar/easy-template-x/actions/workflows/ci.yaml/badge.svg)](https://github.com/alonrbar/easy-template-x/actions/workflows/ci.yaml)
-[![npm version](https://img.shields.io/npm/v/easy-template-x.svg)](https://www.npmjs.com/package/easy-template-x)
-[![npm license](https://img.shields.io/npm/l/easy-template-x.svg)](https://www.npmjs.com/package/easy-template-x)
+[![ci](https://github.com/alonrbar/squared-easy-template-x/actions/workflows/ci.yaml/badge.svg)](https://github.com/alonrbar/squared-easy-template-x/actions/workflows/ci.yaml)
+[![npm version](https://img.shields.io/npm/v/squared-easy-template-x.svg)](https://www.npmjs.com/package/squared-easy-template-x)
+[![npm license](https://img.shields.io/npm/l/squared-easy-template-x.svg)](https://www.npmjs.com/package/squared-easy-template-x)
 
 - [Node Example](#node-example)
 - [Browser Example](#browser-example)
@@ -37,7 +37,7 @@ Generate docx documents from templates, in Node or in the browser.
 
 ```typescript
 import * as fs from 'fs';
-import { TemplateHandler } from 'easy-template-x';
+import { TemplateHandler } from 'squared-easy-template-x';
 
 // 1. read template file
 const templateFile = fs.readFileSync('myTemplate.docx');
@@ -71,7 +71,7 @@ The following example produces the same output while running in the browser.
 Notice that the actual template processing (step 2) is exactly the same as in the previous Node example.
 
 ```typescript
-import { TemplateHandler } from 'easy-template-x';
+import { TemplateHandler } from 'squared-easy-template-x';
 
 // 1. read template file
 
@@ -122,13 +122,13 @@ function saveFile(filename, blob) {
 
 ## Live Demo
 
-Checkout this [live demo](https://codesandbox.io/p/sandbox/easy-template-x-demo-x4ppu?file=%2Findex.ts) on CodeSandbox 😎
+Checkout this [live demo](https://codesandbox.io/p/sandbox/squared-easy-template-x-demo-x4ppu?file=%2Findex.ts) on CodeSandbox 😎
 
 ## Plugins
 
-`easy-template-x` uses a plugin model to support it's various template manipulation capabilities. There are some built-in plugins and you can also write your own custom plugins if required.
+`squared-easy-template-x` uses a plugin model to support it's various template manipulation capabilities. There are some built-in plugins and you can also write your own custom plugins if required.
 
-These are the plugins that comes bundled with `easy-template-x`:
+These are the plugins that comes bundled with `squared-easy-template-x`:
 
 - [Simple text replacement plugin.](#text-plugin)
 - [Loop plugin for iterating text, table rows and list rows and for simple conditions.](#loop-plugin)
@@ -285,7 +285,7 @@ And the second will produce this one:
 
 ![output document](./docs/assets/loop-over-content-out.png?raw=true)
 
-By default `easy-template-x` will loop over "content" if the opening and closing loop tags are in the same table cell and "row" otherwise.
+By default `squared-easy-template-x` will loop over "content" if the opening and closing loop tags are in the same table cell and "row" otherwise.
 
 ### Image plugin
 
@@ -331,7 +331,7 @@ Input data:
     "easy": {
         _type: 'link',
         text: 'super easy',  // Optional - if not specified the `target` property will be used
-        target: 'https://github.com/alonrbar/easy-template-x'
+        target: 'https://github.com/alonrbar/squared-easy-template-x'
     }
 }
 ```
@@ -404,7 +404,7 @@ export class RawXmlPlugin extends TemplatePlugin {
         }
 
         // Remove the placeholder node.
-        // We can be sure that only the placeholder is removed since easy-template-x
+        // We can be sure that only the placeholder is removed since squared-easy-template-x
         // makes sure that each tag is isolated into it's own separate <w:t> node.
         XmlNode.remove(wordTextNode);
     }
@@ -422,10 +422,10 @@ export interface RawXmlContent extends PluginContent {
 
 ## Listing tags
 
-You can get the list of [tags](https://github.com/alonrbar/easy-template-x/blob/8a88535ef090fc357cf3523411bef0d0729d10c8/src/compilation/tag.ts) in a template by calling the `parseTags` method as follows:
+You can get the list of [tags](https://github.com/alonrbar/squared-easy-template-x/blob/8a88535ef090fc357cf3523411bef0d0729d10c8/src/compilation/tag.ts) in a template by calling the `parseTags` method as follows:
 
 ```typescript
-import { TemplateHandler } from 'easy-template-x';
+import { TemplateHandler } from 'squared-easy-template-x';
 
 const templateFile = fs.readFileSync('myTemplate.docx');
 
@@ -435,7 +435,7 @@ const tags = await handler.parseTags(templateFile);
 
 ## Scope resolution
 
-`easy-template-x` supports tag data scoping. That is, you can reference
+`squared-easy-template-x` supports tag data scoping. That is, you can reference
 "shallow" data from within deeper in the hierarchy similarly to how you can
 reference an outer scope variables from within a function in JavaScript. You can
 leverage this property to declare "top level" data (your logo and company name
@@ -488,13 +488,13 @@ const handler = new TemplateHandler({
 ### Community Extensions
 
 The following extensions were developed by the community.  
-Want to see your extension here? Submit a pull request or [open an issue](https://github.com/alonrbar/easy-template-x/issues).
+Want to see your extension here? Submit a pull request or [open an issue](https://github.com/alonrbar/squared-easy-template-x/issues).
 
 #### Data Binding Extension
 
-The [easy-template-x-data-binding](https://github.com/sebastianrogers/easy-template-x-data-binding) extension supports updating [custom XML files](https://docs.microsoft.com/en-gb/archive/blogs/modonovan/word-2007-content-controls-and-xml-part-1-the-basics) inside Word documents.
+The [squared-easy-template-x-data-binding](https://github.com/sebastianrogers/squared-easy-template-x-data-binding) extension supports updating [custom XML files](https://docs.microsoft.com/en-gb/archive/blogs/modonovan/word-2007-content-controls-and-xml-part-1-the-basics) inside Word documents.
 
-This allows using `easy-template-x` to automatically fill [Word forms](https://support.office.com/en-us/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b) that uses content controls.
+This allows using `squared-easy-template-x` to automatically fill [Word forms](https://support.office.com/en-us/article/create-forms-that-users-complete-or-print-in-word-040c5cc1-e309-445b-94ac-542f732c8c8b) that uses content controls.
 
 ## Template handler options
 
@@ -550,12 +550,12 @@ const handler = new TemplateHandler({
 
 ### Advanced syntax and custom resolvers
 
-Custom [scope data resolvers](https://github.com/alonrbar/easy-template-x/blob/master/src/compilation/scopeData.ts#L18) gives the developer a way to hook into `easy-template-x` in order to change how it interprets the tag syntax.
+Custom [scope data resolvers](https://github.com/alonrbar/squared-easy-template-x/blob/master/src/compilation/scopeData.ts#L18) gives the developer a way to hook into `squared-easy-template-x` in order to change how it interprets the tag syntax.
 
-For instance, to use [Angular](https://angular.io/)-like expressions you can import [easy-template-x-angular-expressions](https://github.com/alonrbar/easy-template-x-angular-expressions) by doing the following:
+For instance, to use [Angular](https://angular.io/)-like expressions you can import [squared-easy-template-x-angular-expressions](https://github.com/alonrbar/squared-easy-template-x-angular-expressions) by doing the following:
 
 ```typescript
-import { createResolver } from "easy-template-x-angular-expressions"
+import { createResolver } from "squared-easy-template-x-angular-expressions"
 
 const handler = new TemplateHandler({
     scopeDataResolver: createResolver()
@@ -599,10 +599,10 @@ There are already some very good templating libraries out there, most notably th
 - [docxtemplater](https://github.com/open-xml-templating/docxtemplater)
 - [docx-templates](https://github.com/guigrpa/docx-templates)
 
-`easy-template-x` takes great inspiration from both. It aspires to take the best
+`squared-easy-template-x` takes great inspiration from both. It aspires to take the best
 out of both and to add some good of it's own. Hopefully it will serve you
 well :)
 
 ## Changelog
 
-The change log can be found [here](https://github.com/alonrbar/easy-template-x/blob/master/CHANGELOG.md).
+The change log can be found [here](https://github.com/alonrbar/squared-easy-template-x/blob/master/CHANGELOG.md).

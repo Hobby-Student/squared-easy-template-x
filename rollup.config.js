@@ -11,11 +11,11 @@ export default {
     input: 'src/index.ts',
     output: [
         {
-            file: 'dist/cjs/easy-template-x.cjs',
+            file: 'dist/cjs/squared-easy-template-x.cjs',
             format: 'cjs'
         },
         {
-            file: 'dist/es/easy-template-x.mjs',
+            file: 'dist/es/squared-easy-template-x.mjs',
             format: 'es'
         }
     ],
